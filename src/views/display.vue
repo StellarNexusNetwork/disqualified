@@ -117,6 +117,7 @@ onMounted(() => {
   height: 120px;
   opacity: 1;
   object-fit: contain;
+  user-select: none;
 }
 .mainBox {
   margin-top: auto;
@@ -192,5 +193,6 @@ onMounted(() => {
   width: 145px;
   height: 145px;
   object-fit: contain;
+  user-select: none;
 }
 </style>
