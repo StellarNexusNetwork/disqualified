@@ -50,6 +50,11 @@
   }
 }
 
+@font-face {
+  font-family: Patika;
+  src: url("Patika-Regular.otf");
+}
+
 *,
 *::before,
 *::after {
