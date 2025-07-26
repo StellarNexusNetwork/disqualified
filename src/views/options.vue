@@ -41,8 +41,8 @@
       <div class="option">
         <div class="name">字体大小</div>
         <div class="component">
-          <InputText v-model.number="config.text.fontSize1" />
-          <Slider v-model="config.text.fontSize1" :min="10" :max="250" style="margin-top: 10px" />
+          <InputNumber v-model.number="config.text.fontSize1" inputId="withoutgrouping" :min="10" :max="200" :useGrouping="false" fluid />
+          <Slider v-model="config.text.fontSize1" :min="10" :max="200" style="margin-top: 10px" />
         </div>
       </div>
       <div class="option">
@@ -54,8 +54,8 @@
       <div class="option">
         <div class="name">字体大小</div>
         <div class="component">
-          <InputText v-model.number="config.text.fontSize2" />
-          <Slider v-model="config.text.fontSize2" :min="10" :max="250" style="margin-top: 10px" />
+          <InputNumber v-model.number="config.text.fontSize2" inputId="withoutgrouping" :min="10" :max="200" :useGrouping="false" fluid />
+          <Slider v-model="config.text.fontSize2" :min="10" :max="200" style="margin-top: 10px" />
         </div>
       </div>
       <div class="option">
@@ -67,8 +67,8 @@
       <div class="option">
         <div class="name">字体大小</div>
         <div class="component">
-          <InputText v-model.number="config.text.fontSize3" />
-          <Slider v-model="config.text.fontSize3" :min="10" :max="250" style="margin-top: 10px" />
+          <InputNumber v-model.number="config.text.fontSize3" inputId="withoutgrouping" :min="10" :max="200" :useGrouping="false" fluid />
+          <Slider v-model="config.text.fontSize3" :min="10" :max="200" style="margin-top: 10px" />
         </div>
       </div>
       <div class="option">
@@ -80,8 +80,8 @@
       <div class="option">
         <div class="name">字体大小</div>
         <div class="component">
-          <InputText v-model.number="config.text.fontSize4" />
-          <Slider v-model="config.text.fontSize4" :min="10" :max="250" style="margin-top: 10px" />
+          <InputNumber v-model.number="config.text.fontSize4" inputId="withoutgrouping" :min="10" :max="200" :useGrouping="false" fluid />
+          <Slider v-model="config.text.fontSize4" :min="10" :max="200" style="margin-top: 10px" />
         </div>
       </div>
     </div>
