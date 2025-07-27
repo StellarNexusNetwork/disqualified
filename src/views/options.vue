@@ -106,6 +106,18 @@
           <div>licenses</div>
         </div>
       </a>
+      <a href="https://github.com/StellarNexusNetwork/disqualified" target="_blank" style="margin-left: 15px">
+        <div class="lisensestext">
+          <img src="/icon/github.svg">
+          <div>Github</div>
+        </div>
+      </a>
+      <a href="https://x.com/NekoNoct" target="_blank" style="margin-left: 15px">
+        <div class="lisensestext">
+          <img src="/icon/twitter.svg">
+          <div>点点关注吧 求求了</div>
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -114,12 +126,13 @@
 import { watch, reactive, ref, watchEffect, onMounted, toRaw } from 'vue'
 
 const icon1Value = ref({ icon: '/icon/icon3.svg', value: '1', constant: false });
-const icon1List=['/icon/warning.svg', '/icon/icon2.svg']
+const icon1List=['/icon/warning.svg', '/icon/icon2.svg', '/icon/icon7.svg']
 
 const options2 = ref([
   { icon: '/icon/icon3.svg', value: '1', constant: false },
   { icon: '/icon/icon4.svg', value: '2', constant: false },
-  { icon: '/icon/icon5.svg', value: '3', constant: true },
+  { icon: '/icon/icon8.svg', value: '3', constant: false },
+  { icon: '/icon/icon5.svg', value: '4', constant: true },
 ]);
 onMounted(()=>{
   watchEffect(()=>{
@@ -127,7 +140,7 @@ onMounted(()=>{
       config.icon.icon1.src = icon1List[0]
     }
     const icon1 = Number(toRaw(icon1Value.value).value);
-    if(icon1< 3 ){
+    if(icon1< 4 ){
       console.log(1)
       config.icon.icon1.src = icon1List[icon1-1]
     }
@@ -203,10 +216,17 @@ watch(
 }
 
 .licenses{
-  margin-top: 20px;
+  margin-top: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.licenses a{
+  overflow: hidden;
+  border-radius:15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .lisensestext{
