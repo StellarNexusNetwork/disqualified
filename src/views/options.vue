@@ -1,6 +1,12 @@
 <template>
   <div class="main">
-    <h1>选项</h1>
+    <div class="mainTitle">
+      <h1>选项</h1>
+      <Button class="download" label="Submit" @click="outputImg">
+        <img src="/icon/download.svg">
+        导出
+      </Button>
+    </div>
     <div class="group">
       <h2>背景</h2>
       <div class="option">
@@ -124,6 +130,8 @@
 
 <script setup lang="ts">
 import { watch, reactive, ref, watchEffect, onMounted, toRaw } from 'vue'
+import { toPng } from 'html-to-image';
+import{useCounterStore} from '@/stores/counter'
 
 const icon1Value = ref({ icon: '/icon/icon3.svg', value: '1', constant: false });
 const icon1List=['/icon/warning.svg', '/icon/icon2.svg', '/icon/icon7.svg']
@@ -176,7 +184,8 @@ export interface Config {
   }
 }
 
-const props = defineProps<{ config: Config }>()
+const props = defineProps<{ config: Config,displayDiv: Object }>()
+
 const emit = defineEmits<{
   (e: 'update:config', value: Config): void
 }>()
@@ -191,6 +200,37 @@ watch(
   { deep: true }
 )
 
+async function outputImg() {
+  useCounterStore().isOutput=true;
+  const targetDiv = props.displayDiv as HTMLElement;
+
+  if (!targetDiv) {
+    console.warn('截图目标为空！');
+    return;
+  }
+
+  try {
+
+    // 生成图片
+    const dataUrl = await toPng(targetDiv, {
+      cacheBust: true,       // 避免缓存问题
+      backgroundColor: undefined, // 保留透明背景（可选）
+      pixelRatio: 2,          // 提高清晰度
+    });
+
+    // 下载图片
+    const link = document.createElement('a');
+    link.download = `screenshot-${Date.now()}.png`;
+    link.href = dataUrl;
+    link.click();
+
+    console.log('保存成功！');
+  } catch (error) {
+    console.error('生成失败：', error);
+  }
+  useCounterStore().isOutput=false;
+}
+
 </script>
 
 <style scoped>
@@ -200,6 +240,24 @@ watch(
   overflow-y: auto;
   padding: 25px;
   padding-bottom: 10px;
+}
+.mainTitle{
+  display: flex;
+  align-items: center;
+}
+
+.download{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.download img{
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
 }
 
 .group {

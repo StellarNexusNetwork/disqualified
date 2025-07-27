@@ -2,10 +2,10 @@
   <div class="app">
     <Splitter style="height: 100%">
       <SplitterPanel class="flex items-center justify-center">
-        <DisplayBox :config="config" />
+        <DisplayBox :config="config" ref="displayBoxRef" />
       </SplitterPanel>
       <SplitterPanel class="flex items-center justify-center">
-        <OptionsBox v-model:config="config" />
+        <OptionsBox v-model:config="config" :displayDiv="displayDiv" />
       </SplitterPanel>
     </Splitter>
   </div>
@@ -14,7 +14,16 @@
 <script setup lang="ts">
 import DisplayBox from '@/views/display.vue'
 import OptionsBox from '@/views/options.vue'
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
+
+const displayBoxRef = ref();
+
+const displayDiv = ref();
+
+onMounted(() => {
+  // 访问 BrotherA 暴露的 div
+  displayDiv.value = displayBoxRef.value?.displayDiv;
+});
 
 const config = ref({
   background: {

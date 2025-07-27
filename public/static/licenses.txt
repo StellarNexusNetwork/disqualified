@@ -1716,46 +1716,29 @@ SOFTWARE.
 │  ├─ licenses: [1m[31mUNLICENSED[39m[22m
 │  ├─ private: true
 │  ├─ path: D:\Code\DISQUALIFIED
-│  ├─ licenseFile: D:\Code\DISQUALIFIED\README.md
-│  ├─ licenseText: # DISQUALIFIED
+│  ├─ licenseFile: D:\Code\DISQUALIFIED\LICENSE
+│  ├─ licenseText: MIT License
 
-This template should help get you started developing with Vue 3 in Vite.
+Copyright (c) 2025 Stellar Nexus Network
 
-## Recommended IDE Setup
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+│  ├─ copyright: Copyright (c) 2025 Stellar Nexus Network
 │  ├─ errno: -4058
 │  ├─ code: ENOENT
 │  └─ syscall: open
@@ -2159,36 +2142,35 @@ THE SOFTWARE.
 │  ├─ errno: -4058
 │  ├─ code: ENOENT
 │  └─ syscall: open
-├─ html2canvas@1.4.1
+├─ html-to-image@1.11.13
 │  ├─ licenses: MIT
-│  ├─ repository: https://github.com/niklasvh/html2canvas
-│  ├─ publisher: Niklas von Hertzen
-│  ├─ email: niklasvh@gmail.com
-│  ├─ path: D:\Code\DISQUALIFIED\node_modules\html2canvas
-│  ├─ licenseFile: D:\Code\DISQUALIFIED\node_modules\html2canvas\LICENSE
-│  ├─ licenseText: Copyright (c) 2012 Niklas von Hertzen
+│  ├─ repository: https://github.com/bubkoo/html-to-image
+│  ├─ publisher: bubkooo
+│  ├─ email: bubkoo.wy@gmail.com
+│  ├─ path: D:\Code\DISQUALIFIED\node_modules\html-to-image
+│  ├─ licenseFile: D:\Code\DISQUALIFIED\node_modules\html-to-image\LICENSE
+│  ├─ licenseText: MIT License
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+Copyright (c) 2017-2025 W.Y.
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-│  ├─ copyright: Copyright (c) 2012 Niklas von Hertzen
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+│  ├─ copyright: Copyright (c) 2017-2025 W.Y.
 │  ├─ errno: -4058
 │  ├─ code: ENOENT
 │  └─ syscall: open

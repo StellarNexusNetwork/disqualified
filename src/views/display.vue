@@ -1,6 +1,6 @@
 <template>
   <div class="main" ref="mainRef">
-    <div class="background" :style="{ zoom: zoomlevel, background: '#' + config.background.color }">
+    <div class="background" :style="{ zoom: zoomlevel, background: '#' + config.background.color }" ref="displayDiv">
       <div class="iconBox" :style="{ background: '#' + config.card.color }">
         <img :src="config.icon.icon1.src" alt="" />
       </div>
@@ -25,8 +25,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watchEffect } from 'vue'
+import{useCounterStore} from '@/stores/counter'
+
 const mainRef = ref<HTMLDivElement>()
+const displayDiv = ref<HTMLDivElement>();
+let oldZoomLevel = 1;
+
+defineExpose({
+  displayDiv,
+});
+
 let resizeObserver
 const zoomlevel = ref(1)
 
@@ -63,7 +72,7 @@ const config = reactive({ ...props.config })
 
 onMounted(() => {
   const updateScale = () => {
-    if (mainRef.value) {
+    if (!useCounterStore().isOutput && mainRef.value) {
       let zoomlevelWidth = 1
       let zoomlevelHeight = 1
       if (mainRef.value?.clientWidth < 940) {
@@ -79,6 +88,15 @@ onMounted(() => {
   resizeObserver = new ResizeObserver(updateScale)
   resizeObserver.observe(mainRef.value!)
   updateScale()
+})
+
+watchEffect(()=>{
+  if (useCounterStore().isOutput){
+    oldZoomLevel=zoomlevel.value;
+    zoomlevel.value = 1;
+  }else{
+    zoomlevel.value = oldZoomLevel;
+  }
 })
 </script>
 
