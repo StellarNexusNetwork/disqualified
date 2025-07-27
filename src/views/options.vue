@@ -99,6 +99,14 @@
         </div>
       </div>
     </div>
+    <div class="licenses">
+      <a href="/static/licenses.txt" target="_blank">
+        <div class="lisensestext">
+          <img src="/icon/icon6.svg">
+          <div>licenses</div>
+        </div>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -178,6 +186,7 @@ watch(
   height: 100%;
   overflow-y: auto;
   padding: 25px;
+  padding-bottom: 10px;
 }
 
 .group {
@@ -191,5 +200,23 @@ watch(
 
 .option .component {
   margin-left: auto;
+}
+
+.licenses{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lisensestext{
+  display: flex;
+  align-items: center;
+}
+
+.lisensestext img{
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 </style>
