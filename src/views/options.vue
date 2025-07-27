@@ -146,11 +146,11 @@ onMounted(()=>{
   watchEffect(()=>{
     if(!icon1Value.value){
       config.icon.icon1.src = icon1List[0]
-    }
-    const icon1 = Number(toRaw(icon1Value.value).value);
-    if(icon1< 4 ){
-      console.log(1)
-      config.icon.icon1.src = icon1List[icon1-1]
+    }else{
+      const icon1 = Number(toRaw(icon1Value.value).value);
+      if(icon1< 4 ){
+        config.icon.icon1.src = icon1List[icon1-1]
+      }
     }
   })
 })
