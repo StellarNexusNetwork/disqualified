@@ -19,7 +19,7 @@
             {{config.text.context2.replace(/\\n/g, '\n')}}
           </p>
         </div>
-        <img class="logo" src="/icon/logo.svg" alt="" />
+        <img class="logo" :src="config.icon.icon2.src" alt="" />
       </div>
     </div>
   </div>
