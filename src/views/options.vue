@@ -163,7 +163,7 @@
       <div class="option">
         <div class="name">图标1-自定义</div>
         <div class="component">
-          <Button class="download" label="Submit" @click="uploadFile('1')"> <img src="/icon/upload.svg" />选择文件 </Button>
+          <Button class="download2" label="Submit" @click="uploadFile('1')"> <img src="/icon/upload.svg" />选择文件 </Button>
         </div>
       </div>
       <div class="option">
@@ -190,7 +190,7 @@
       <div class="option">
         <div class="name">图标2-自定义</div>
         <div class="component">
-          <Button class="download" label="Submit" @click="uploadFile('2')"> <img src="/icon/upload.svg" />选择文件 </Button>
+          <Button class="download2" label="Submit" @click="uploadFile('2')"> <img src="/icon/upload.svg" />选择文件 </Button>
         </div>
       </div>
     </div>
@@ -397,6 +397,20 @@ async function uploadFile(id:string) {
 
 .option .component {
   margin-left: auto;
+}
+
+.download2 {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.download2 img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .licenses {
