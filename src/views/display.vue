@@ -107,6 +107,7 @@ watchEffect(()=>{
   height: 100%;
   display: grid;
   place-items: center;
+  background-color: #efefef;
 }
 
 .background {
