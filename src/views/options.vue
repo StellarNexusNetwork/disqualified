@@ -360,12 +360,23 @@ async function uploadFile(id:string) {
 </script>
 
 <style scoped>
+@media (min-width: 670px) {
+  .main {
+    padding: 25px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 670px) {
+  .main {
+    padding: 25px;
+    padding-bottom: 120px;
+  }
+}
 .main {
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  padding: 25px;
-  padding-bottom: 10px;
 }
 .mainTitle {
   display: flex;
