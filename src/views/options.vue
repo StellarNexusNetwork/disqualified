@@ -2,7 +2,7 @@
   <div class="main">
     <div class="mainTitle">
       <h1>选项</h1>
-      <Button class="download" label="Submit" @click="outputImg">
+      <Button class="download" label="Submit" @click="outputImg" style="--p-ripple-background: #34d399">
         <img src="/icon/download.svg" />
         导出
       </Button>
@@ -167,7 +167,9 @@
       <div class="option">
         <div class="name">图标1 - 自定义</div>
         <div class="component">
-          <Button class="download2" label="Submit" @click="uploadFile('1')"> <img src="/icon/upload.svg" />选择文件 </Button>
+          <Button class="download2" label="Submit" @click="uploadFile('1')" style="--p-ripple-background: #34d399">
+            <img src="/icon/upload.svg" />选择文件
+          </Button>
         </div>
       </div>
       <div class="option">
@@ -207,7 +209,9 @@
       <div class="option">
         <div class="name">图标2 - 自定义</div>
         <div class="component">
-          <Button class="download2" label="Submit" @click="uploadFile('2')"> <img src="/icon/upload.svg" />选择文件 </Button>
+          <Button class="download2" label="Submit" @click="uploadFile('2')" style="--p-ripple-background: #34d399">
+            <img src="/icon/upload.svg" />选择文件
+          </Button>
         </div>
       </div>
     </div>

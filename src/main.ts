@@ -1,4 +1,5 @@
 import './assets/main.css'
+import Ripple from 'primevue/ripple';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -12,6 +13,7 @@ const app = createApp(App)
 app.use(createPinia())
 
 app.use(PrimeVue, {
+  ripple: true,
   theme: {
     preset: Aura,
     options: {
@@ -21,5 +23,7 @@ app.use(PrimeVue, {
     }
   }
 });
+
+app.directive('ripple', Ripple);
 
 app.mount('#app')
