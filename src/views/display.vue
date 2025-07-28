@@ -25,8 +25,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, reactive, ref, watchEffect } from 'vue'
-import{useCounterStore} from '@/stores/counter'
+import { onMounted, reactive, ref, watchEffect } from 'vue';
+import{useCounterStore} from '@/stores/counter';
 
 const mainRef = ref<HTMLDivElement>()
 const displayDiv = ref<HTMLDivElement>();
@@ -73,6 +73,7 @@ const config = reactive({ ...props.config })
 onMounted(() => {
   const updateScale = () => {
     if (!useCounterStore().isOutput && mainRef.value) {
+
       let zoomlevelWidth = 1
       let zoomlevelHeight = 1
       if (mainRef.value?.clientWidth < 940) {

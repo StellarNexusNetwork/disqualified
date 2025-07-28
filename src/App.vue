@@ -1,10 +1,10 @@
 <template>
   <div class="app">
-    <Splitter style="height: 100%">
-      <SplitterPanel class="flex items-center justify-center">
+    <Splitter style="height: 100vh" :layout="layout">
+      <SplitterPanel class="flex items-center justify-center" :minSize="10">
         <DisplayBox :config="config" ref="displayBoxRef" />
       </SplitterPanel>
-      <SplitterPanel class="flex items-center justify-center">
+      <SplitterPanel class="flex items-center justify-center" :minSize="minSize">
         <OptionsBox v-model:config="config" :displayDiv="displayDiv" />
       </SplitterPanel>
     </Splitter>
@@ -14,7 +14,21 @@
 <script setup lang="ts">
 import DisplayBox from '@/views/display.vue'
 import OptionsBox from '@/views/options.vue'
-import { ref,onMounted } from 'vue'
+import { ref, onMounted, watchEffect } from 'vue'
+import { useWindowStore } from '@/stores/window';
+
+const layout= ref('horizontal')
+const minSize=ref(35);
+
+watchEffect(()=>{
+  if(useWindowStore().enableMobileSupport){
+    layout.value = 'vertical'
+    minSize.value=21;
+  }else{
+    layout.value = 'horizontal'
+    minSize.value=31;
+  }
+})
 
 const displayBoxRef = ref();
 

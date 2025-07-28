@@ -204,17 +204,17 @@
       <a
         href="https://github.com/StellarNexusNetwork/disqualified"
         target="_blank"
-        style="margin-left: 15px"
+        style="margin-left: 10px"
       >
         <div class="lisensestext">
           <img src="/icon/github.svg" />
           <div>Github</div>
         </div>
       </a>
-      <a href="https://x.com/NekoNoct" target="_blank" style="margin-left: 15px">
+      <a href="https://x.com/NekoNoct" target="_blank" style="margin-left: 10px">
         <div class="lisensestext">
           <img src="/icon/twitter.svg" />
-          <div>点点关注吧 求求了</div>
+          <div>给个关注吧 求你了</div>
         </div>
       </a>
     </div>
