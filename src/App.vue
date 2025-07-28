@@ -60,9 +60,12 @@ const config = ref({
   icon:{
     icon1: {
       src: '/icon/warning.svg',
+      zoomLevel:1,
     },
     icon2: {
       src: '/icon/logo.svg',
+      zoomLevel:1,
+      display: true
     }
   }
 })

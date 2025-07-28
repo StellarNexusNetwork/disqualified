@@ -69,10 +69,11 @@
             inputId="withoutgrouping"
             :min="10"
             :max="200"
+            :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
             :useGrouping="false"
             fluid
           />
-          <Slider v-model="config.text.fontSize1" :min="10" :max="200" style="margin-top: 10px" />
+          <Slider v-model="config.text.fontSize1" :min="10" :max="200" style="margin-top: 15px" />
         </div>
       </div>
       <div class="option">
@@ -89,10 +90,11 @@
             inputId="withoutgrouping"
             :min="10"
             :max="200"
+            :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
             :useGrouping="false"
             fluid
           />
-          <Slider v-model="config.text.fontSize2" :min="10" :max="200" style="margin-top: 10px" />
+          <Slider v-model="config.text.fontSize2" :min="10" :max="200" style="margin-top: 15px" />
         </div>
       </div>
       <div class="option">
@@ -109,10 +111,11 @@
             inputId="withoutgrouping"
             :min="10"
             :max="200"
+            :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
             :useGrouping="false"
             fluid
           />
-          <Slider v-model="config.text.fontSize3" :min="10" :max="200" style="margin-top: 10px" />
+          <Slider v-model="config.text.fontSize3" :min="10" :max="200" style="margin-top: 15px" />
         </div>
       </div>
       <div class="option">
@@ -129,10 +132,11 @@
             inputId="withoutgrouping"
             :min="10"
             :max="200"
+            :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
             :useGrouping="false"
             fluid
           />
-          <Slider v-model="config.text.fontSize4" :min="10" :max="200" style="margin-top: 10px" />
+          <Slider v-model="config.text.fontSize4" :min="10" :max="200" style="margin-top: 15px" />
         </div>
       </div>
     </div>
@@ -161,9 +165,22 @@
         </div>
       </div>
       <div class="option">
-        <div class="name">图标1-自定义</div>
+        <div class="name">图标1 - 自定义</div>
         <div class="component">
           <Button class="download2" label="Submit" @click="uploadFile('1')"> <img src="/icon/upload.svg" />选择文件 </Button>
+        </div>
+      </div>
+      <div class="option">
+        <div class="name">图标1 - 缩放</div>
+        <div class="component">
+          <InputNumber
+            v-model.number="config.icon.icon1.zoomLevel"
+            inputId="withoutgrouping"
+            :min="0.1" :max="15" :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
+            :useGrouping="false"
+            fluid
+          />
+          <Slider v-model="config.icon.icon1.zoomLevel" :min="0.1" :max="3" :step="0.01" style="margin-top: 15px" />
         </div>
       </div>
       <div class="option">
@@ -188,10 +205,29 @@
         </div>
       </div>
       <div class="option">
-        <div class="name">图标2-自定义</div>
+        <div class="name">图标2 - 自定义</div>
         <div class="component">
           <Button class="download2" label="Submit" @click="uploadFile('2')"> <img src="/icon/upload.svg" />选择文件 </Button>
         </div>
+      </div>
+    </div>
+    <div class="option">
+      <div class="name">图标2 - 缩放</div>
+      <div class="component">
+        <InputNumber
+          v-model.number="config.icon.icon2.zoomLevel"
+          inputId="withoutgrouping"
+          :min="0.1" :max="15" :allowEmpty="false" :minFractionDigits="0" :maxFractionDigits="4"
+          :useGrouping="false"
+          fluid
+        />
+        <Slider v-model="config.icon.icon2.zoomLevel" :min="0.1" :max="3" :step="0.01" style="margin-top: 15px" />
+      </div>
+    </div>
+    <div class="option">
+      <div class="name">图标2 - 显示</div>
+      <div class="component">
+        <ToggleSwitch v-model="config.icon.icon2.display" />
       </div>
     </div>
     <div class="licenses">
@@ -275,22 +311,25 @@ export interface Config {
     color: string
   }
   text: {
-    color: string
-    title1: string
-    title2: string
-    context1: string
-    context2: string
-    fontSize1: number
-    fontSize2: number
-    fontSize3: number
+    color: string,
+    title1: string,
+    title2: string,
+    context1: string,
+    context2: string,
+    fontSize1: number,
+    fontSize2: number,
+    fontSize3: number,
     fontSize4: number
   }
   icon: {
     icon1: {
-      src: string
+      src: string,
+      zoomLevel:number
     }
     icon2: {
-      src: string
+      src: string,
+      zoomLevel:number,
+      display: boolean
     }
   }
 }
@@ -403,7 +442,7 @@ async function uploadFile(id:string) {
 .option {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .option .component {

@@ -2,7 +2,7 @@
   <div class="main" ref="mainRef">
     <div class="background" :style="{ zoom: zoomlevel, background: '#' + config.background.color }" ref="displayDiv">
       <div class="iconBox" :style="{ background: '#' + config.card.color }">
-        <img :src="config.icon.icon1.src" alt="" />
+        <img :src="config.icon.icon1.src" alt="" :style="{ zoom: config.icon.icon1.zoomLevel}" />
       </div>
       <div class="mainBox" :style="{ background: '#' + config.card.color }">
         <div class="textBox" :style="{ color: '#' + config.text.color }">
@@ -19,7 +19,7 @@
             {{config.text.context2.replace(/\\n/g, '\n')}}
           </p>
         </div>
-        <img class="logo" :src="config.icon.icon2.src" alt="" />
+        <img class="logo" :src="config.icon.icon2.src" alt="" :style="{ zoom: config.icon.icon2.zoomLevel}" v-if="config.icon.icon2.display" />
       </div>
     </div>
   </div>
@@ -60,9 +60,12 @@ export interface Config {
   icon:{
     icon1: {
       src: string,
+      zoomLevel:number
     },
     icon2: {
       src: string,
+      zoomLevel:number
+      display: boolean
     }
   }
 }
